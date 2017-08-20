@@ -23,7 +23,7 @@ namespace FluToDo {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class GlobalDrawableLocation {
+    public class GlobalDrawableLocation {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -37,7 +37,7 @@ namespace FluToDo {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FluToDo.GlobalDrawableLocation", typeof(GlobalDrawableLocation).GetTypeInfo().Assembly);
@@ -52,7 +52,7 @@ namespace FluToDo {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +64,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a addIcon.png.
         /// </summary>
-        internal static string AddIcon {
+        public static string AddIcon {
             get {
                 return ResourceManager.GetString("AddIcon", resourceCulture);
             }
@@ -73,7 +73,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a completedIcon.png.
         /// </summary>
-        internal static string CompletedIcon {
+        public static string CompletedIcon {
             get {
                 return ResourceManager.GetString("CompletedIcon", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a deleteIcon.png.
         /// </summary>
-        internal static string DeleteIcon {
+        public static string DeleteIcon {
             get {
                 return ResourceManager.GetString("DeleteIcon", resourceCulture);
             }
@@ -91,7 +91,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a icon.png.
         /// </summary>
-        internal static string FluToDoIcon {
+        public static string FluToDoIcon {
             get {
                 return ResourceManager.GetString("FluToDoIcon", resourceCulture);
             }

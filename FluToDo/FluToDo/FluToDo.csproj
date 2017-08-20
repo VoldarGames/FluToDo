@@ -39,6 +39,11 @@
     <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\ICrudCommand.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
+    <Compile Include="GlobalDrawableLocation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalDrawableLocation.resx</DependentUpon>
+    </Compile>
     <Compile Include="GlobalLocation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -54,11 +59,6 @@
     <Compile Include="FluToDoApp.xaml.cs">
       <DependentUpon>FluToDoApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GlobalDrawableLocation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalDrawableLocation.resx</DependentUpon>
-    </Compile>
     <Compile Include="Commands\UpdateCommand.cs" />
     <Compile Include="ViewModels\MainListViewModel.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
@@ -72,20 +72,20 @@
     <Compile Include="Commands\RefreshCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GlobalDrawableLocation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>GlobalDrawableLocation.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FluToDoApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="GlobalDrawableLocation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalDrawableLocation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalLocation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GlobalLocation.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalMessagingLocation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GlobalMessagingLocation.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

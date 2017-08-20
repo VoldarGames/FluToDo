@@ -1,9 +1,11 @@
 ﻿using Core.Helpers;
 using FluToDo.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace FluToDo
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FluToDoApp
     {
         public FluToDoApp()

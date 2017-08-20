@@ -23,7 +23,7 @@ namespace FluToDo {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class GlobalMessagingLocation {
+    public class GlobalMessagingLocation {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -37,7 +37,7 @@ namespace FluToDo {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FluToDo.GlobalMessagingLocation", typeof(GlobalMessagingLocation).GetTypeInfo().Assembly);
@@ -52,7 +52,7 @@ namespace FluToDo {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +64,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a CheckOffAnimation.
         /// </summary>
-        internal static string CheckOffAnimation {
+        public static string CheckOffAnimation {
             get {
                 return ResourceManager.GetString("CheckOffAnimation", resourceCulture);
             }
@@ -73,7 +73,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a CheckOnAnimation.
         /// </summary>
-        internal static string CheckOnAnimation {
+        public static string CheckOnAnimation {
             get {
                 return ResourceManager.GetString("CheckOnAnimation", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a RefreshToDoList.
         /// </summary>
-        internal static string RefreshToDoList {
+        public static string RefreshToDoList {
             get {
                 return ResourceManager.GetString("RefreshToDoList", resourceCulture);
             }

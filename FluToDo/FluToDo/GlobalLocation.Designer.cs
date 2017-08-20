@@ -23,7 +23,7 @@ namespace FluToDo {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class GlobalLocation {
+    public class GlobalLocation {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -37,7 +37,7 @@ namespace FluToDo {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FluToDo.GlobalLocation", typeof(GlobalLocation).GetTypeInfo().Assembly);
@@ -52,7 +52,7 @@ namespace FluToDo {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +64,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a Add.
         /// </summary>
-        internal static string AddText {
+        public static string AddText {
             get {
                 return ResourceManager.GetString("AddText", resourceCulture);
             }
@@ -73,7 +73,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a An error has ocurred creating.
         /// </summary>
-        internal static string ErrorAdd {
+        public static string ErrorAdd {
             get {
                 return ResourceManager.GetString("ErrorAdd", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a An error has ocurred deleting.
         /// </summary>
-        internal static string ErrorDelete {
+        public static string ErrorDelete {
             get {
                 return ResourceManager.GetString("ErrorDelete", resourceCulture);
             }
@@ -91,7 +91,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a An error has ocurred getting ToDoItems from server. Check internet connection..
         /// </summary>
-        internal static string ErrorGet {
+        public static string ErrorGet {
             get {
                 return ResourceManager.GetString("ErrorGet", resourceCulture);
             }
@@ -100,7 +100,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a An error has ocurred updating ToDoItem .
         /// </summary>
-        internal static string ErrorPut {
+        public static string ErrorPut {
             get {
                 return ResourceManager.GetString("ErrorPut", resourceCulture);
             }
@@ -109,7 +109,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a ToDo Detail.
         /// </summary>
-        internal static string FluToDoDetailTitle {
+        public static string FluToDoDetailTitle {
             get {
                 return ResourceManager.GetString("FluToDoDetailTitle", resourceCulture);
             }
@@ -118,7 +118,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a FluToDo.
         /// </summary>
-        internal static string FluToDoTitle {
+        public static string FluToDoTitle {
             get {
                 return ResourceManager.GetString("FluToDoTitle", resourceCulture);
             }
@@ -127,7 +127,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a created on server successfully!.
         /// </summary>
-        internal static string SuccessAdd {
+        public static string SuccessAdd {
             get {
                 return ResourceManager.GetString("SuccessAdd", resourceCulture);
             }
@@ -136,7 +136,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a deleted from server successfully!.
         /// </summary>
-        internal static string SuccessDelete {
+        public static string SuccessDelete {
             get {
                 return ResourceManager.GetString("SuccessDelete", resourceCulture);
             }
@@ -145,7 +145,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a updated on server successfully!.
         /// </summary>
-        internal static string SuccessPut {
+        public static string SuccessPut {
             get {
                 return ResourceManager.GetString("SuccessPut", resourceCulture);
             }
@@ -154,7 +154,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a Enter description....
         /// </summary>
-        internal static string ToDoEntryPlaceHolder {
+        public static string ToDoEntryPlaceHolder {
             get {
                 return ResourceManager.GetString("ToDoEntryPlaceHolder", resourceCulture);
             }
@@ -163,7 +163,7 @@ namespace FluToDo {
         /// <summary>
         ///   Busca una cadena traducida similar a ToDo:.
         /// </summary>
-        internal static string ToDoHeader {
+        public static string ToDoHeader {
             get {
                 return ResourceManager.GetString("ToDoHeader", resourceCulture);
             }
