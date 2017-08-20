@@ -1,7 +1,8 @@
-﻿using Domain;
+﻿using System;
+using System.Globalization;
+using Domain;
 using FluToDo.Behaviors;
 using FluToDo.Commands;
-using FluToDo.Converters;
 using FluToDo.Styles;
 using FluToDo.ToolbarItems;
 using FluToDo.ViewModels;
@@ -117,6 +118,19 @@ namespace FluToDo.Views
         {
             MessagingCenter.Send(GlobalMessagingLocation.RefreshToDoList, GlobalMessagingLocation.RefreshToDoList);
             base.OnAppearing();
+        }
+    }
+
+    public class InverseBoolConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return !(bool)value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return !(bool)value;
         }
     }
 }

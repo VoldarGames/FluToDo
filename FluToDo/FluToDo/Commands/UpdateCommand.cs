@@ -22,7 +22,7 @@ namespace FluToDo.Commands
         {
             IsBusy = true;
             CustomAction?.Invoke((T)parameter);
-            var apiClient = new ApiClient();
+            var apiClient = DependencyService.Get<IApiClient>();
             var result = await apiClient.PutAsync((TodoItem)parameter);
             DependencyService.Get<IOperatingSystemMethods>()
                 .ShowToast(result != null && result.Value

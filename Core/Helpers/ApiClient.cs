@@ -11,11 +11,10 @@ using Xamarin.Forms;
 
 namespace Core.Helpers
 {
-    public class ApiClient
+    public class ApiClient : IApiClient
     {
         public HttpClient HttpClient { get; set; } = new HttpClient()
         {
-            
             BaseAddress = new Uri("http://192.168.1.120:8080")
         };
 
@@ -39,7 +38,7 @@ namespace Core.Helpers
             {typeof(TodoItem),"/api/ToDo" }
         };
 
-        public async Task<bool?> PostAsync<T>(T entity)
+        public async Task<bool?> PostAsync<T>(T entity) where T : EntityBase
         {
             var json = JsonConvert.SerializeObject(entity);
             HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -88,7 +87,7 @@ namespace Core.Helpers
             return result?.IsSuccessStatusCode;
         }
 
-        public async Task<List<T>> GetAsync<T>()
+        public async Task<List<T>> GetAsync<T>() where T : EntityBase
         {
             HttpResponseMessage result = null;
             try

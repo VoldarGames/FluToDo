@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Core.Helpers;
+using Core.Interfaces;
 using Domain;
 using FluToDo.Commands;
 using FluToDo.Interfaces;
@@ -60,7 +61,7 @@ namespace FluToDo.ViewModels
 
         public async void RefreshList()
         {
-            var apiClient = new ApiClient();
+            var apiClient = DependencyService.Get<IApiClient>();
             var list = await apiClient.GetAsync<TodoItem>();
             if(list != null) TodoItemList = new ObservableCollection<TodoItem>(list);
             IsBusy = false;

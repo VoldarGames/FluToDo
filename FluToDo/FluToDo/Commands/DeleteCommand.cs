@@ -30,7 +30,7 @@ namespace FluToDo.Commands
 
         private async Task InternalExecute(T castedParameter)
         {
-            var apiClient = new ApiClient();
+            var apiClient = DependencyService.Get<IApiClient>();
             var result = await apiClient.DeleteAsync(castedParameter);
             DependencyService.Get<IOperatingSystemMethods>()
                 .ShowToast(result != null && result.Value

@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityBase.cs" />
+    <Compile Include="Factories\ToDoItemFactory.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="TodoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

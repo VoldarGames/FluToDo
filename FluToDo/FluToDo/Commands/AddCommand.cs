@@ -2,11 +2,12 @@
 using System.Windows.Input;
 using Core.Helpers;
 using Core.Interfaces;
+using Domain;
 using Xamarin.Forms;
 
 namespace FluToDo.Commands
 {
-    public class AddCommand<T> : ICommand, ICrudCommand<T>
+    public class AddCommand<T> : ICommand, ICrudCommand<T> where T : EntityBase
     {
         public bool IsBusy { get; set; }
         public Action<T> CustomAction { get; set; }
@@ -28,7 +29,7 @@ namespace FluToDo.Commands
 
         private async void InternalExecute(T castedParameter)
         {
-            var apiClient = new ApiClient();
+            var apiClient = DependencyService.Get<IApiClient>();
             var result = await apiClient.PostAsync(castedParameter);
             DependencyService.Get<IOperatingSystemMethods>()
                 .ShowToast(result != null && result.Value

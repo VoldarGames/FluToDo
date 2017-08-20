@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers\ApiClient.cs" />
+    <Compile Include="Interfaces\IApiClient.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Interfaces\IOperatingSystemMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

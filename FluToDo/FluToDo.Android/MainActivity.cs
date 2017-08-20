@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using FluToDo.Droid.Resources;
+using Core.Helpers;
 using Xamarin.Forms;
 
 
@@ -26,6 +26,7 @@ namespace FluToDo.Droid
         {
             OperatingSystemMethods.CurrentContext = this;
             DependencyService.Register<OperatingSystemMethods>();
+            DependencyService.Register<ApiClient>();
         }
     }
 }
