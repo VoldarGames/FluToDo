@@ -126,4 +126,7 @@
   <data name="DeleteIcon" xml:space="preserve">
     <value>deleteIcon.png</value>
   </data>
+  <data name="FluToDoIcon" xml:space="preserve">
+    <value>icon.png</value>
+  </data>
 </root>

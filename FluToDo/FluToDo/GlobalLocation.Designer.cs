@@ -107,6 +107,24 @@ namespace FluToDo {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ToDo Detail.
+        /// </summary>
+        internal static string FluToDoDetailTitle {
+            get {
+                return ResourceManager.GetString("FluToDoDetailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FluToDo.
+        /// </summary>
+        internal static string FluToDoTitle {
+            get {
+                return ResourceManager.GetString("FluToDoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a created on server successfully!.
         /// </summary>
         internal static string SuccessAdd {
@@ -130,6 +148,24 @@ namespace FluToDo {
         internal static string SuccessPut {
             get {
                 return ResourceManager.GetString("SuccessPut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter description....
+        /// </summary>
+        internal static string ToDoEntryPlaceHolder {
+            get {
+                return ResourceManager.GetString("ToDoEntryPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ToDo:.
+        /// </summary>
+        internal static string ToDoHeader {
+            get {
+                return ResourceManager.GetString("ToDoHeader", resourceCulture);
             }
         }
     }

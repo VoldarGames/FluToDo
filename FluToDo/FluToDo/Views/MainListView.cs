@@ -1,8 +1,8 @@
-﻿using System;
-using System.Globalization;
-using Domain;
+﻿using Domain;
 using FluToDo.Behaviors;
 using FluToDo.Commands;
+using FluToDo.Converters;
+using FluToDo.Styles;
 using FluToDo.ToolbarItems;
 using FluToDo.ViewModels;
 using Xamarin.Forms;
@@ -45,6 +45,8 @@ namespace FluToDo.Views
 
         private void BuildUserInterface()
         {
+            Title = GlobalLocation.FluToDoTitle;
+            Icon = new FileImageSource() {File = GlobalDrawableLocation.FluToDoIcon};
             ToolbarItems.Add(new AddToolbarItem(new DetailToDoItemViewModel().GetView()));
 
             Content = new StackLayout()
@@ -59,39 +61,38 @@ namespace FluToDo.Views
         private void ConfigureListView()
         {
             ToDoItemsListView.IsPullToRefreshEnabled = true;
-            
 
             ToDoItemsListView.ItemTemplate = new DataTemplate(() =>
             {
                 var toDoLabel = new Label()
                 {
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    VerticalOptions = LayoutOptions.Center,
-                    FontSize = 14,
-                    TextColor = Color.Black
+                    Style = GlobalStyles.CellLabelStyle
                 };
                 toDoLabel.SetBinding(Label.TextProperty,nameof(TodoItem.Name));
                 var imageCompleted = new Image()
                 {
                     Source = GlobalDrawableLocation.CompletedIcon,
-                    HorizontalOptions = LayoutOptions.End
+                    Style = GlobalStyles.CellStatusImageStyle
                 };
                 imageCompleted.SetBinding(IsVisibleProperty,nameof(TodoItem.IsComplete));
                 var boxView = new BoxView()
                 {
                    HorizontalOptions = LayoutOptions.End,
                    Color = BackgroundColor,
-                   WidthRequest = 32,
-                   HeightRequest = 32
+                   Style = GlobalStyles.CellStatusBoxViewStyle
                 };
                 boxView.SetBinding(IsVisibleProperty, nameof(TodoItem.IsComplete),BindingMode.Default,new InverseBoolConverter());
-                var deleteMenuItem = new MenuItem()
+                var deleteMenuItem = new MenuItem
                 {
-                    Icon = new FileImageSource() { File = GlobalDrawableLocation.DeleteIcon }
-                };
-                deleteMenuItem.Command = new DeleteCommand<TodoItem>()
-                {
-                    FinallyAction = item => { MessagingCenter.Send(GlobalMessagingLocation.RefreshToDoList,GlobalMessagingLocation.RefreshToDoList);}
+                    Icon = new FileImageSource() {File = GlobalDrawableLocation.DeleteIcon},
+                    Command = new DeleteCommand<TodoItem>()
+                    {
+                        FinallyAction = item =>
+                        {
+                            MessagingCenter.Send(GlobalMessagingLocation.RefreshToDoList,
+                                GlobalMessagingLocation.RefreshToDoList);
+                        }
+                    }
                 };
                 deleteMenuItem.SetBinding(MenuItem.CommandParameterProperty, ".");
                 var cell = new ViewCell
@@ -116,19 +117,6 @@ namespace FluToDo.Views
         {
             MessagingCenter.Send(GlobalMessagingLocation.RefreshToDoList, GlobalMessagingLocation.RefreshToDoList);
             base.OnAppearing();
-        }
-    }
-
-    public class InverseBoolConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return !(bool)value;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return !(bool)value;
         }
     }
 }

@@ -87,5 +87,14 @@ namespace FluToDo {
                 return ResourceManager.GetString("DeleteIcon", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a icon.png.
+        /// </summary>
+        internal static string FluToDoIcon {
+            get {
+                return ResourceManager.GetString("FluToDoIcon", resourceCulture);
+            }
+        }
     }
 }

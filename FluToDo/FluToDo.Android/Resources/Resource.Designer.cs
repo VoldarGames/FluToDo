@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("FluToDo.Droid.Resource", IsApplication=true)]
 
-namespace FluToDo.Droid
+namespace FluToDo.Droid.Resources
 {
 	
 	
@@ -26,7 +26,7 @@ namespace FluToDo.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FluToDo.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FluToDo.Droid.Resources.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

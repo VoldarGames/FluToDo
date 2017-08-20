@@ -49,6 +49,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GlobalMessagingLocation.resx</DependentUpon>
     </Compile>
+    <Compile Include="Styles\GlobalStyles.cs" />
     <Compile Include="ToolbarItems\AddToolbarItem.cs" />
     <Compile Include="FluToDoApp.xaml.cs">
       <DependentUpon>FluToDoApp.xaml</DependentUpon>
@@ -64,6 +65,8 @@
     <Compile Include="Views\DetailTodoItemView.cs" />
     <Compile Include="Interfaces\IHasRefreshList.cs" />
     <Compile Include="Behaviors\ListViewItemTappedBehavior.cs" />
+    <Compile Include="ViewModels\DetailToDoItemViewModel.cs" />
+    <Compile Include="Converters\InverseBoolConverter.cs" />
     <Compile Include="Views\MainListView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />

@@ -132,6 +132,12 @@
   <data name="ErrorPut" xml:space="preserve">
     <value>An error has ocurred updating ToDoItem </value>
   </data>
+  <data name="FluToDoDetailTitle" xml:space="preserve">
+    <value>ToDo Detail</value>
+  </data>
+  <data name="FluToDoTitle" xml:space="preserve">
+    <value>FluToDo</value>
+  </data>
   <data name="SuccessAdd" xml:space="preserve">
     <value>created on server successfully!</value>
   </data>
@@ -140,5 +146,11 @@
   </data>
   <data name="SuccessPut" xml:space="preserve">
     <value>updated on server successfully!</value>
+  </data>
+  <data name="ToDoEntryPlaceHolder" xml:space="preserve">
+    <value>Enter description...</value>
+  </data>
+  <data name="ToDoHeader" xml:space="preserve">
+    <value>ToDo:</value>
   </data>
 </root>

@@ -1,11 +1,10 @@
 ﻿using Core.Helpers;
 using FluToDo.ViewModels;
-using FluToDo.Views;
 using Xamarin.Forms;
 
 namespace FluToDo
 {
-    public partial class FluToDoApp : Application
+    public partial class FluToDoApp
     {
         public FluToDoApp()
         {
@@ -28,6 +27,7 @@ namespace FluToDo
         protected override void OnResume()
         {
             // Handle when your app resumes
+            MessagingCenter.Send(GlobalMessagingLocation.RefreshToDoList, GlobalMessagingLocation.RefreshToDoList);
         }
     }
 }

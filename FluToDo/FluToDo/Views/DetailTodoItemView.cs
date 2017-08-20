@@ -1,25 +1,44 @@
 using System;
-using System.Windows.Input;
 using Core.Utils;
 using Domain;
-using FluToDo.Commands;
-using FluToDo.ViewModels.Base;
+using FluToDo.Styles;
+using FluToDo.ViewModels;
 using Xamarin.Forms;
 
 namespace FluToDo.Views
 {
     public class DetailTodoItemView : ContentPage
     {
+        public Button SubmitButton { get; set; } = new Button()
+        {
+            Text = GlobalLocation.AddText,
+            Style = GlobalStyles.SubmitButton
+        };
+
+        public Entry ToDoEntry { get; set; } = new Entry() { Placeholder = GlobalLocation.ToDoEntryPlaceHolder };
+        public Label ToDoHeaderLabel { get; set; } = new Label() { Text = GlobalLocation.ToDoHeader, Style = GlobalStyles.HeaderLabel };
+
         public DetailTodoItemView()
         {
             SetBindings();
-            Content = new StackLayout()
+            BuildUserInterface();
+        }
+
+        private void BuildUserInterface()
+        {
+            Title = GlobalLocation.FluToDoDetailTitle;
+            Icon = new FileImageSource() {File = GlobalDrawableLocation.FluToDoIcon};
+            Content = new Frame()
             {
-                Children =
+                Style = GlobalStyles.FrameStyle,
+                Content = new StackLayout()
                 {
-                    ToDoHeaderLabel,
-                    ToDoEntry,
-                    SubmitButton
+                    Children =
+                    {
+                        ToDoHeaderLabel,
+                        ToDoEntry,
+                        SubmitButton
+                    }
                 }
             };
         }
@@ -31,20 +50,6 @@ namespace FluToDo.Views
             SubmitButton.SetBinding(Button.CommandParameterProperty,nameof(DetailToDoItemViewModel.SelectedItem));
         }
 
-        public Button SubmitButton { get; set; } = new Button();
-
-        public Entry ToDoEntry { get; set; } = new Entry() {Placeholder = "Enter ToDo name..."};
-
-        public Label ToDoHeaderLabel { get; set; } = new Label() {Text = "ToDo Item Name:" };
-    }
-
-    public class DetailToDoItemViewModel : ViewModelBase
-    {
-        public ICommand AddCommand { get; set; } = new AddCommand<TodoItem>();
-        public TodoItem SelectedItem { get; set; } = new TodoItem();
-        public override Page GetView()
-        {
-            return new DetailTodoItemView() {BindingContext = this};
-        }
+        
     }
 }
