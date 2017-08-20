@@ -123,6 +123,9 @@
   <data name="CheckOnAnimation" xml:space="preserve">
     <value>CheckOnAnimation</value>
   </data>
+  <data name="ClearDetailTodoView" xml:space="preserve">
+    <value>ClearDetailTodoView</value>
+  </data>
   <data name="RefreshToDoList" xml:space="preserve">
     <value>RefreshToDoList</value>
   </data>

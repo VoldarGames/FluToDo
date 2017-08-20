@@ -119,7 +119,13 @@ namespace FluToDo.Views
                         cellStackLayout.Animate("AnimationOn", d =>
                         {
                             Device.BeginInvokeOnMainThread(() => cellStackLayout.BackgroundColor = Color.FromRgb(Math.Cos(d*(Math.PI / 180)),1D, Math.Cos(d* (Math.PI / 180))));
-                        },-180D,180D,50U,1000U,Easing.SinIn);
+                        },-45D,45D,50U,750U,Easing.SinIn, (d, b) =>
+                        {
+                            if (b)
+                                Device.BeginInvokeOnMainThread(() => cellStackLayout.BackgroundColor =
+                                    Color.LightGreen);
+
+                        });
                     }
                 } );
 

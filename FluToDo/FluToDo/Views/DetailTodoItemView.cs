@@ -45,11 +45,15 @@ namespace FluToDo.Views
 
         private void SetBindings()
         {
-            ToDoEntry.SetBinding(Entry.TextProperty,BindingMaker.Make(nameof(DetailToDoItemViewModel.SelectedItem), nameof(TodoItem.Name)));
+            ToDoEntry.SetBinding(Entry.TextProperty,BindingMaker.Make(nameof(DetailToDoItemViewModel.SelectedItem), nameof(TodoItem.Name)),BindingMode.TwoWay);
             SubmitButton.SetBinding(Button.CommandProperty, nameof(DetailToDoItemViewModel.AddCommand));
             SubmitButton.SetBinding(Button.CommandParameterProperty,nameof(DetailToDoItemViewModel.SelectedItem));
         }
 
-        
+        protected override void OnAppearing()
+        {
+            MessagingCenter.Send(GlobalMessagingLocation.ClearDetailTodoView, GlobalMessagingLocation.ClearDetailTodoView);
+            base.OnAppearing();
+        }
     }
 }

@@ -80,6 +80,15 @@ namespace FluToDo {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ClearDetailTodoView.
+        /// </summary>
+        public static string ClearDetailTodoView {
+            get {
+                return ResourceManager.GetString("ClearDetailTodoView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a RefreshToDoList.
         /// </summary>
         public static string RefreshToDoList {
