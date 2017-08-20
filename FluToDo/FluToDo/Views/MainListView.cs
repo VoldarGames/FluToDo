@@ -65,6 +65,7 @@ namespace FluToDo.Views
 
             ToDoItemsListView.ItemTemplate = new DataTemplate(() =>
             {
+                
                 var toDoLabel = new Label()
                 {
                     Style = GlobalStyles.CellLabelStyle
@@ -96,20 +97,42 @@ namespace FluToDo.Views
                     }
                 };
                 deleteMenuItem.SetBinding(MenuItem.CommandParameterProperty, ".");
-                var cell = new ViewCell
+                var cellStackLayout = new StackLayout()
                 {
-                    View = new StackLayout()
+                    Orientation = StackOrientation.Horizontal,
+                    Children =
                     {
-                        Orientation = StackOrientation.Horizontal,
-                        Children =
-                        {
-                            toDoLabel,
-                            imageCompleted,
-                            boxView
-                        }
+                        toDoLabel,
+                        imageCompleted,
+                        boxView
                     }
                 };
+                var cell = new ViewCell
+                {
+                    View = cellStackLayout
+                };
                 cell.ContextActions.Add(deleteMenuItem);
+                MessagingCenter.Subscribe<string>(cell,GlobalMessagingLocation.CheckOnAnimation, text =>
+                {
+                    if (text.Equals(toDoLabel.Text))
+                    {
+                        cellStackLayout.Animate("AnimationOn", d =>
+                        {
+                            Device.BeginInvokeOnMainThread(() => cellStackLayout.BackgroundColor = Color.FromRgb(Math.Cos(d*(Math.PI / 180)),1D, Math.Cos(d* (Math.PI / 180))));
+                        },-180D,180D,50U,1000U,Easing.SinIn);
+                    }
+                } );
+
+                MessagingCenter.Subscribe<string>(cell,GlobalMessagingLocation.CheckOffAnimation, text =>
+                {
+                    if (text.Equals(toDoLabel.Text))
+                    {
+                        cellStackLayout.Animate("AnimationOff", d =>
+                        {
+                            Device.BeginInvokeOnMainThread(() => cellStackLayout.BackgroundColor = Color.White);
+                        }, -180D, 180D, 50U, 750U, Easing.SinIn);
+                    }
+                } );
                 return cell;
             });
         }

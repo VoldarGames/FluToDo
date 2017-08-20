@@ -48,6 +48,10 @@ namespace FluToDo.ViewModels
                 CustomAction = item =>
                 {
                     item.IsComplete = !item.IsComplete;
+                    MessagingCenter.Send(item.Name,
+                        item.IsComplete
+                            ? GlobalMessagingLocation.CheckOnAnimation
+                            : GlobalMessagingLocation.CheckOffAnimation);
                 },
                 FinallyAction = item => {RefreshList();}
             };

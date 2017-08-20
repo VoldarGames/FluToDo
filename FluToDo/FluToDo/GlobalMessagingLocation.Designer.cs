@@ -62,6 +62,24 @@ namespace FluToDo {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a CheckOffAnimation.
+        /// </summary>
+        internal static string CheckOffAnimation {
+            get {
+                return ResourceManager.GetString("CheckOffAnimation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CheckOnAnimation.
+        /// </summary>
+        internal static string CheckOnAnimation {
+            get {
+                return ResourceManager.GetString("CheckOnAnimation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a RefreshToDoList.
         /// </summary>
         internal static string RefreshToDoList {
